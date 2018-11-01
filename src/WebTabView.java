@@ -14,7 +14,6 @@ public class WebTabView extends BorderPane {
 	private StatusBar statusBar;
 	
 	private BrowserView browser;
-	private HistoryManager history;
 	
 	private SimpleStringProperty title = new SimpleStringProperty();
 
@@ -38,8 +37,6 @@ public class WebTabView extends BorderPane {
 
 		view = new WebView();
 		engine = view.getEngine();
-		
-		this.history = new HistoryManager(this);
 		
 		this.addressBar = new AddressBar(this);
 		this.statusBar = new StatusBar(this);
@@ -76,10 +73,6 @@ public class WebTabView extends BorderPane {
 	
 	public AddressBar getAddressBar() {
 		return addressBar;
-	}
-	
-	public HistoryManager getHistoryManager() {
-		return history;
 	}
 	
 	public BrowserView getBrowser() {
